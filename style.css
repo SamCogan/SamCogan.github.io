@@ -1,0 +1,27 @@
+body{
+	text-align:center;	
+}
+#wrapper{
+	width:800px;
+	height:400px;
+	margin:0 auto;
+}
+button{
+	margin:10px;
+	font-size:250%;
+}
+img{
+	width:380px;	
+}
+#user{	
+	width:48%;
+	height:100%;
+	float:left;
+	border:3px dashed #333;
+}
+#comp{
+	border:3px dashed #333;
+	width:48%;
+	height:100%;
+	float:right;
+}

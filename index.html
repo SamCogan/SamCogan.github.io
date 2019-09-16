@@ -1,0 +1,86 @@
+<html>
+	<head>
+		<title>
+			Rock Paper Scissors
+		</title>
+		<link rel="stylesheet" href="style.css"/>
+	</head>
+	<body>
+		<button onclick="rock()">Rock</button>
+		<button onclick="paper()">Paper</button>
+		<button onclick="scissors()">Scissors</button>
+		<br>
+		<button onclick="go()">Go!</button>
+		<div id="wrapper">
+			<div id="user"></div>
+			<div id="comp"></div>
+		</div>
+		<p id="wld"></p>
+		<script>
+		function rock(){
+			user=1;
+			document.getElementById("user").innerHTML="<img src='rock.gif' >";
+		}
+		function paper(){
+			user=2;
+			document.getElementById("user").innerHTML="<img src='paper.gif' >";
+		
+		}
+		function scissors(){
+			user=3;
+			document.getElementById("user").innerHTML="<img src='scissors.gif' >";
+		
+		}
+		function go(){
+		if(user==1 || user==2 || user==3){
+			comp=parseInt(Math.random()*3)+1;
+			//insert computer's picture
+			if(comp==1){
+				document.getElementById("comp").innerHTML="<img src='rock.gif' >";
+			}
+			else if(comp==2){
+				document.getElementById("comp").innerHTML="<img src='paper.gif' >";
+			}
+			else if(comp==3){
+				document.getElementById("comp").innerHTML="<img src='scissors.gif' >";
+			}
+			//deals with draws
+			if(user==comp){
+				document.getElementById("wld").innerHTML="DRAW!";
+			}
+			//1= rock, 2=paper, 3=scissors
+			//rock logic
+			else if(user==1){
+				if(comp==2){
+					document.getElementById("wld").innerHTML="LOSE!";
+				}
+				else if(comp==3){
+					document.getElementById("wld").innerHTML="WIN!";
+				}
+			}
+			//paper logic
+			else if(user==2){
+				if(comp==3){
+					document.getElementById("wld").innerHTML="LOSE!";
+				}
+				else if(comp==1){
+					document.getElementById("wld").innerHTML="WIN!";
+				}
+			}
+			//scissors logic
+			else if(user==3){
+				if(comp==1){
+					document.getElementById("wld").innerHTML="LOSE!";
+				}
+				else if(comp==2){
+					document.getElementById("wld").innerHTML="WIN!";
+				}
+			}
+		}
+		else{
+			alert("Please choose an option");
+		}
+		}
+		</script>
+	</body>
+</html>
